@@ -1,0 +1,16 @@
+canvas {
+    border: 2px solid black;
+}
+
+div {
+    border: 1px solid red;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-down {
+    display: flex;
+    flex-direction: column;
+}

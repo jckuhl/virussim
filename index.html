@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Virus Simulator</title>
+</head>
+<body>
+    <h1>Virus Simulator</h1>
+    <h4>Best viewed in Google Chrome</h4>
+    <ul>
+        <li>Blue: Susceptible</li>
+        <li>Red: Infected</li>
+        <li>Grey: Recovered/Removed</li>
+    </ul>
+    <section class="flex-container">
+        <div>
+            <div>
+                <canvas id="chart"></canvas>
+            </div>
+            <div class="flex-down">
+                <label for="population">
+                    <p>Population: <span></span></p>
+                </label>
+                <input type="range" value="20" min="0" max="100" name="population" id="population" list="pop"/>
+                <datalist id="pop">
+                    <option value="10"></option>
+                    <option value="20"></option>
+                    <option value="30"></option>
+                    <option value="40"></option>
+                    <option value="50"></option>
+                    <option value="60"></option>
+                    <option value="70"></option>
+                    <option value="80"></option>
+                    <option value="90"></option>
+                    <option value="100"></option>
+                </datalist>
+
+                <label for="infectionRate">
+                    <p>Infection Rate: <span></span></p>
+                </label>                
+                <input type="range" value="0.2" min="0" max="1" step="0.1" name="infectionRate" id="infectionRate" list="infectPercent">
+                <datalist id="infectPercent">
+                    <option value="0.1"></option>
+                    <option value="0.2"></option>
+                    <option value="0.3"></option>
+                    <option value="0.4"></option>
+                    <option value="0.5"></option>
+                    <option value="0.6"></option>
+                    <option value="0.7"></option>
+                    <option value="0.8"></option>
+                    <option value="0.9"></option>
+                    <option value="1.0"></option>
+                </datalist>
+
+                <label for="infectionRadius">
+                    <p>Infection Radius: <span id="infectRadiusValue"></span></p>
+                </label>
+                <input type="range" value="10" min="0" max="50" name="infectionRadius" id="infectionRadius" list="radius">
+                <datalist id="radius">
+                    <option value="10"></option>
+                    <option value="20"></option>
+                    <option value="30"></option>
+                    <option value="40"></option>
+                    <option value="50"></option>
+                </datalist>
+                <button id="simButton"></button>
+            </div>
+        </div>
+        <div>
+            <canvas id="simArea" width="500px" height="500px"></canvas>
+            <p>Number of active cases: <span id="active">0</span></p>
+        </div> 
+    </section>
+    <script src="ui.js" type="module"></script>
+    <script src="virus.js" type="module">
+    </script>
+</body>
+</html>
